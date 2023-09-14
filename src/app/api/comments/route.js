@@ -1,15 +1,12 @@
 import { getAuthSessions } from "@/utils/auth";
 import prisma from "@/utils/connect";
-import { Whisper } from "next/font/google";
+
 import { NextResponse } from "next/server";
-
-
 
 //GET ALL COMMENTS
 export const GET = async (req) => {
-  
 const {searchParams}=new URL(req.url)
-console.log(searchParams);
+console.log("COMMENTS",searchParams);
 const postSlug=searchParams.get("postSlug")
 console.log("PostSlug in comments",postSlug);
 
