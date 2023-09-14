@@ -1,5 +1,5 @@
 import prisma from "@/utils/connect";
-import { Whisper } from "next/font/google";
+
 import { NextResponse } from "next/server";
 
 export const GET = async ({params}) => {
