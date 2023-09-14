@@ -2,7 +2,7 @@ import prisma from "@/utils/connect";
 import { Whisper } from "next/font/google";
 import { NextResponse } from "next/server";
 
-export const GET = async (req,{params}) => {
+export const GET = async ({params}) => {
 const {slug}=params
 
     try{
