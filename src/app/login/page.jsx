@@ -18,8 +18,7 @@ router.push("/")
     <h2 className={styles.heading}>Login</h2>
     <div className={styles.socialbuttons}>
       <button className={styles.google} onClick={()=>signIn("google")}>Login with Google</button>
-      <button className={styles.facebook}>Login with Facebook</button>
-      <button className={styles.github}>Login with GitHub</button>
+    
       
     </div>
   </div>
