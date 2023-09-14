@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 
-const Write = ({searchParams}) => {
+const Write = () => {
   const { status } = useSession();
   const router = useRouter();
 
