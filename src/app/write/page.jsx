@@ -13,7 +13,6 @@ import { useSession } from "next-auth/react";
 const Write = () => {
   const { status } = useSession();
   const router = useRouter();
-
   const[open,setOpen]=useState(false)
   const[value,setValue]=useState("")
   const[file,setFile]=useState(null)
@@ -28,7 +27,6 @@ const Write = () => {
       const storageRef = ref(storage, name);
 
       const uploadTask = uploadBytesResumable(storageRef, file);
-      
       // Register three observers:
       // 1. 'state_changed' observer, called any time the state changes
       // 2. Error observer, called on failure
