@@ -15,6 +15,7 @@ const getData=async (slug)=>{
 }
 const SinglePage = async({params}) => {
   const {slug}=params
+  console.log(slug);
   const data=await getData(slug)
   return (
     <div className={styles.container}>

@@ -2,7 +2,7 @@ import prisma from "@/utils/connect";
 
 import { NextResponse } from "next/server";
 
-export const GET = async ({params}) => {
+export const GET = async (req,{params}) => {
 const {slug}=params
 
     try{
