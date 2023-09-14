@@ -21,6 +21,8 @@ const Write = () => {
   const[title,setTitle]=useState("")
   const [catSlug, setCatSlug] = useState("");
   const[loading,setLoading]=useState(false)
+
+
   useEffect(()=>{
     const storage=getStorage(app)
     const upload=()=>{
@@ -84,7 +86,7 @@ const Write = () => {
   const handleSubmit=async()=>{
     setLoading(true)
    
-    const res=await fetch(`${process.env.NEXTAUTH_URL}/api/posts`,{
+    const res=await fetch(`/api/posts`,{
       method:"POST",
       body:JSON.stringify({
         title,
@@ -100,6 +102,7 @@ const Write = () => {
       router.push(`/posts/${data.slug}`);
     }
   }
+ 
   return (
     <div className={styles.container}> 
   <input type="text" placeholder='Title...' className={styles.input} onChange={e=>setTitle(e.target.value)}/>
