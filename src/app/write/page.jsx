@@ -1,17 +1,18 @@
 "use client"
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import React, { useEffect, useState } from 'react'
-import styles from './page.module.css'
-import Image from 'next/image'
-import ReactQuill from 'react-quill'
+import React, { useEffect, useState } from 'react';
+import styles from './page.module.css';
+import Image from 'next/image';
 import "react-quill/dist/quill.bubble.css";
 import { app } from "@/utils/firbase";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import dynamic from "next/dynamic";
 
 
 const Write = () => {
   const { status } = useSession();
+  const ReactQuill = dynamic(() => import('react-quill'),{ssr:false});
   const router = useRouter();
   const[open,setOpen]=useState(false)
   const[value,setValue]=useState("")
