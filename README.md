@@ -4,6 +4,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First, run the development server:
 
+Set up prisma and make sure you have your mongoDB set up
+to configure prisma follow these commands
+```
+npm install @prisma/client @auth/prisma-adapter
+npm install prisma --save-dev
+npx prisma init --datasource-provider mongodb
+npx prisma generate
+```
+Follow these commands to set up prisma 
+and finaly you are good to go
+
+
 ```bash
 npm run dev
 # or
