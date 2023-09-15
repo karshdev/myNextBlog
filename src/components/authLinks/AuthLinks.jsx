@@ -40,16 +40,15 @@ const AuthLinks = () => {
   {
     open &&  (
       <div className={styles.container} >
-      <Link href="/" >Homepage</Link>
-      <Link href="/" >About</Link>
-      <Link href="/" >Contact</Link>
+      <Link href="/" onClick={()=>setOpen(!open)}>Homepage</Link>
+      <Link href="/contact" onClick={()=>setOpen(!open)}>Contact</Link>
       {
     status==="unauthenticated" ?
     (
-      <Link href="/login">Login</Link>
+      <Link href="/login" onClick={()=>setOpen(!open)}>Login</Link>
     ):(
       <>
-      <Link href="/write">Write</Link>
+      <Link href="/write" onClick={()=>setOpen(!open)}>Write</Link>
       <span className={styles.span} onClick={signOut}>Logout</span>
       </>
     )

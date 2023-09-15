@@ -9,10 +9,10 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 
+const ReactQuill = dynamic(() => import('react-quill'),{ssr:false});
 
 const Write = () => {
   const { status } = useSession();
-  const ReactQuill = dynamic(() => import('react-quill'),{ssr:false});
   const router = useRouter();
   const[open,setOpen]=useState(false)
   const[value,setValue]=useState("")
@@ -21,7 +21,6 @@ const Write = () => {
   const[title,setTitle]=useState("")
   const [catSlug, setCatSlug] = useState("");
   const[loading,setLoading]=useState(false)
-
 
   useEffect(()=>{
     const storage=getStorage(app)
@@ -147,7 +146,12 @@ const Write = () => {
      
      </div>
     )}
-      <ReactQuill className={styles.textArea} theme="bubble" value={value} onChange={setValue} placeholder='Tell Your Story...' />
+     
+     
+     
+        <ReactQuill className={styles.textArea} theme="bubble" value={value}  onChange={setValue} placeholder='Tell Your Story...'  />
+       
+   
      
   </div>
   <button className={styles.publish} onClick={handleSubmit}>Publish</button>
