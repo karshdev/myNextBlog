@@ -121,7 +121,7 @@ const Write = () => {
    </div>}
   <div className={styles.editor}>
     <button className={styles.button} onClick={()=>setOpen(!open)}>
-      <Image src="/logo.png"  alt="" width={16} height={16} />
+      <Image src="https://icons.veryicon.com/png/o/internet--web/55-common-web-icons/add-43.png"  alt="" width={16} height={16} />
     </button>
     {open && (
       <div className={styles.add}>
@@ -133,17 +133,9 @@ const Write = () => {
       
       <button className={styles.addButton}>
       <label htmlFor="image">
-     <Image style={{cursor:"pointer"}} src="https://icons.veryicon.com/png/o/internet--web/55-common-web-icons/add-43.png"  alt="" width={40} height={40} />
+     <Image style={{cursor:"pointer",width:"100%",height:"100%"}} src="https://icons.veryicon.com/png/o/internet--web/flatten-icon/gallery-17.png"  alt="" width={40} height={40} />
      </label>
    </button>
- 
-   <button className={styles.addButton}>
-     <Image src="/food.png"  alt="" width={16} height={16} />
-   </button>
-   <button className={styles.addButton}>
-     <Image src="/culture.png"  alt="" width={16} height={16} />
-   </button>
-     
      </div>
     )}
      

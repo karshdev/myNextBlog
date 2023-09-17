@@ -40,10 +40,10 @@
 
 .addButton {
   border-color: #1a8917;
- 
+  
 }
 
-.add {
+.add{
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -51,7 +51,6 @@
   position: absolute;
   z-index: 999;
   width: max-content;
-  
   left: 0;
   top: 50px;
 

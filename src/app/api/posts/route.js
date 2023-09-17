@@ -1,5 +1,6 @@
 import { getAuthSessions } from "@/utils/auth";
 import prisma from "@/utils/connect";
+
 import { NextResponse } from "next/server";
 
 export const GET = async (req) => {
@@ -7,8 +8,8 @@ export const GET = async (req) => {
  
     const page=searchParams.get("page")
     const cat=searchParams.get("cat")
-    const POST_PER_PAGE=2
-
+    
+    const POST_PER_PAGE=3
     const query={
       take:POST_PER_PAGE,
       skip:POST_PER_PAGE * (page-1) ,
@@ -16,13 +17,17 @@ export const GET = async (req) => {
       ...(cat && {catSlug:cat})
       } 
     }
+   
   try {
     //to make everything in one query we use $transcaction
 const [posts, count]= await prisma.$transaction([
   prisma.post.findMany(query),
   prisma.post.count({where:query.where}),
 ])
-    return new NextResponse(JSON.stringify({posts, count}, { status: 200 }));
+
+
+  
+    return new NextResponse(JSON.stringify({posts,count}, { status: 200 }));
   } catch (err) {
     console.log(err.message);
     return new NextResponse(

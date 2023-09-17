@@ -11,10 +11,9 @@ const Footer = () => {
         <h1 className={styles.logoText}>KarshBlog</h1>
       </div>
       <p className={styles.desc}>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim
-        necessitatibus similique aspernatur obcaecati veritatis. Aperiam cum
-        porro sequi, totam minima consequuntur, aspernatur deleniti vero
-        repellendus dorales.
+       This is a blog website where you can post your blogs with images
+       Here you will find best blogs and best blogger around you.
+       Trending website in terms of blogs.
       </p>
       <div className={styles.icons}>
         <Image src="/facebook.png" alt="" width={18} height={18} />
