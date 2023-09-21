@@ -112,3 +112,6 @@ position: absolute;
 top: 50%;
 left: 50%;
 }
+.progressbar{
+  margin-bottom: 10px;
+}

@@ -32,3 +32,9 @@
   .button:hover {
     background-color: #555;
   }
+  .bottomContainer{
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+    margin-top: 10px;
+  }

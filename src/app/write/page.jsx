@@ -9,8 +9,9 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
 
-const ReactQuill = dynamic(() => import('react-quill'),{ssr:false});
 
+const ReactQuill = dynamic(() => import('react-quill'),{ssr:false});
+const ProgressBar=dynamic(() => import('@ramonak/react-progress-bar'),{ssr:false});
 const Write = () => {
   const { status } = useSession();
   const router = useRouter();
@@ -21,7 +22,7 @@ const Write = () => {
   const[title,setTitle]=useState("")
   const [catSlug, setCatSlug] = useState("");
   const[loading,setLoading]=useState(false)
-
+const[progress1,setProgress]=useState(30)
   useEffect(()=>{
     const storage=getStorage(app)
     const upload=()=>{
@@ -39,16 +40,18 @@ const Write = () => {
           // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
          
-          if(progress===100){[
+          if(progress===100){
+            setProgress(progress)
             setOpen(false)
-          ]}
+          }
           switch (snapshot.state) {
             case 'paused':
               console.log('Upload is paused');
               break;
             case 'running':
-              console.log('Upload is running');
-              break;
+             console.log("running");
+             break;
+             
           }
         }, 
         (error) => {
@@ -66,6 +69,8 @@ const Write = () => {
     file && upload()
 
   },[file])
+ 
+
   if (status === "loading") {
     return <Image className={styles.loading} alt="" src="https://i.gifer.com/ZKZg.gif" width={70} height={70} />
   }
@@ -113,6 +118,7 @@ const Write = () => {
         <option value="travel">travel</option>
         <option value="coding">coding</option>
       </select>
+     {file && <ProgressBar  className={styles.progressbar} completed = {progress1} bgColor = "green" isLabelVisible = {true}  />} 
      {loading && <div className={styles.loadingImage}>
      <Image className={styles.loading} alt="" src="https://i.gifer.com/ZKZg.gif" width={100} height={100} />
      </div>}
