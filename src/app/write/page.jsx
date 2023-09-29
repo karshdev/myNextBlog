@@ -117,7 +117,7 @@ const[progress1,setProgress]=useState(30)
         <option value="travel">travel</option>
         <option value="coding">coding</option>
       </select>
-     {file && <ProgressBar  className={styles.progressbar} completed = {progress1} bgColor = "green" isLabelVisible = {true}  />} 
+     {(file && progress1<100) && <ProgressBar  className={styles.progressbar} completed = {progress1} bgColor = "green" isLabelVisible = {true}  />} 
      {loading && <div className={styles.loadingImage}>
      <Image className={styles.loading} alt="" src="https://i.gifer.com/ZKZg.gif" width={100} height={100} />
      </div>}
