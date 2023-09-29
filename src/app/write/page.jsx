@@ -39,7 +39,6 @@ const[progress1,setProgress]=useState(30)
           // Observe state change events such as progress, pause, and resume
           // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
           const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-         
           if(progress===100){
             setProgress(progress)
             setOpen(false)
@@ -123,7 +122,7 @@ const[progress1,setProgress]=useState(30)
      <Image className={styles.loading} alt="" src="https://i.gifer.com/ZKZg.gif" width={100} height={100} />
      </div>}
     { media &&  <div className={styles.imageContainer}>
-      <Image src={media} className={styles.image} width={100} height={100} alt="" />
+      <Image src={media} className={styles.image} width={100} height={100} alt="" unoptimized/>
    </div>}
   <div className={styles.editor}>
     <button className={styles.button} onClick={()=>setOpen(!open)}>
